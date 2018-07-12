@@ -7,12 +7,12 @@ public class Singleton implements Serializable, Cloneable {
 
     private Singleton() {
         if (instance != null) {
-            throw new AssertionError("Don't.");
+            throw new AssertionError("Illegal initialization");
         }
     }
 
     // thread safe
-    public Singleton getIntance() {
+    public static Singleton getIntance() {
         if (instance == null) {
             synchronized (Singleton.class) {
                 if (instance == null) {
